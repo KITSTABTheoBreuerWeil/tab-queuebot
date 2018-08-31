@@ -1,0 +1,8 @@
+# editors
+*.swp
+
+# package manager
+node_modules/
+
+# application
+.env
