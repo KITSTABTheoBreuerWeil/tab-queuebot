@@ -8,11 +8,7 @@ const app = express();
 app.use(bodyParser.json())
 
 // routes
-app.get('/', (request, response) => {
-  response.send('<h1>Queuebot is live!</h1>');
-  controllers.requeue();
-});
-
-app.post('/', controllers.requeue);
+app.get('/trigger', controllers.webhookController)
+app.post('/webhook', controllers.webhookController);
 
 module.exports = app;
