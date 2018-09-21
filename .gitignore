@@ -1,5 +1,6 @@
 # editors
 *.swp
+.idea
 
 # package manager
 node_modules/
