@@ -2,7 +2,9 @@
 *.swp
 
 # package manager
+build/
 node_modules/
+yarn-error.log
 
 # application
 .env
