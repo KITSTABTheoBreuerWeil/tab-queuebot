@@ -2,6 +2,7 @@ import { execSync } from 'child_process';
 import { readFileSync } from 'fs';
 import YAML from 'yaml';
 
+// typings
 import { Configuration } from './helpers.interfaces';
 
 const PATH_TO_CONFIG: string = `${__dirname}/../config.yaml`;

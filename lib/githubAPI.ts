@@ -1,11 +1,15 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import path from 'path';
 
 import { getConfig, asBase64 } from './helpers';
 
+// typings
+
 import {
   RequestHeaders,
-  PullRequestPatchPayload
+  PullRequestPatchPayload,
+  APIGetPullRequestsResponse,
+  APIPatchPullRequestResponse,
 } from './githubAPI.interfaces';
 
 const {
@@ -42,7 +46,7 @@ export const createAuthorisationHeaders = (): RequestHeaders => {
 
 /* API requests */
 
-export const getPullRequests = (): Promise<AxiosResponse> => (
+export const getPullRequests = (): Promise<APIGetPullRequestsResponse> => (
   axios({
     method: 'get',
     url: createPullRequestsURL(),
@@ -54,7 +58,8 @@ export const getPullRequests = (): Promise<AxiosResponse> => (
 export const patchPullRequestByNumber = (
   prNumber: number,
   data: PullRequestPatchPayload = {}
-) => (
+): Promise<APIPatchPullRequestResponse> => (
+
   axios({
     method: 'patch',
     url: createPullRequestURLByNumber(prNumber),
