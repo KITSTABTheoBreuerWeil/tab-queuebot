@@ -3,36 +3,36 @@ import { AxiosResponse } from 'axios';
 /* utility types */
 
 export interface RequestHeaders {
-  [header: string]: string
-};
+  [header: string]: string;
+}
 
 export interface PullRequestPatchPayload {
-  title?: string
-};
+  title?: string;
+}
 
 /* data types */
 
 export interface LabelObject {
-  name: string
-};
+  name: string;
+}
 
 export interface APIPullRequestObject {
-  labels: LabelObject[]
-  number: number
-  title?: string
+  labels: LabelObject[];
+  number: number;
+  title?: string;
   head: {
-    ref: string
-  }
-};
+    ref: string,
+  };
+}
 
 /* response types */
 
 export interface APIErrorResponse {
-  message: string
+  message: string;
 }
 
 export type APIGetPullRequestsResponse =
-  AxiosResponse<APIPullRequestsObject[] | APIErrorResponse>;
+  AxiosResponse<APIPullRequestObject[] | APIErrorResponse>;
 
 export type APIPatchPullRequestResponse =
-  AxiosResponse<void | APIErrorResponse>
+  AxiosResponse<void | APIErrorResponse>;

@@ -1,15 +1,15 @@
 import { Configuration } from './config.interfaces';
 
 export const developmentConfig: Configuration = {
-  REMOTE: {
-    DOMAIN: 'https://github.com/',
-    API: 'https://api.github.com/'
-  },
   LABELS: {
+    MERGEABLE: 'Ready to merge',
     PRIORITY: 'High priority',
-    MERGEABLE: 'Ready to merge'
+  },
+  REMOTE: {
+    API: 'https://api.github.com/',
+    DOMAIN: 'https://github.com/',
   },
   SETTINGS: {
-    REBASE: false
-  }
+    REBASE: false,
+  },
 };

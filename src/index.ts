@@ -1,5 +1,5 @@
-import { config } from 'dotenv';
+import { config as populateEnvironmentVariables } from 'dotenv';
 import { app } from './app';
 
-config();
-app.listen(process.env.PORT || 5000);
+populateEnvironmentVariables();
+app.listen(5000);

@@ -5,15 +5,14 @@ import { Request, Response } from 'express';
 
 export const webhookController = async (
   _: Request,
-  response: Response
+  response: Response,
 ): Promise<void> => {
 
   let statusCode: number = 201;
 
   try {
     await requeue();
-  }
-  catch (error) {
+  } catch (error) {
     statusCode = 400;
     console.error(error);
   }

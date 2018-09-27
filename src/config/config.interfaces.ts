@@ -1,13 +1,13 @@
 export interface Configuration {
   REMOTE: {
-    DOMAIN: string
-    API: string
-  }
+    DOMAIN: string,
+    API: string,
+  };
   LABELS: {
-    PRIORITY: string
-    MERGEABLE: string
-  }
+    PRIORITY: string,
+    MERGEABLE: string,
+  };
   SETTINGS: {
-    REBASE: boolean
-  }
-};
+    REBASE: boolean,
+  };
+}

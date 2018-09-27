@@ -1,4 +1,4 @@
 export interface TitleComponentsObject {
-  position: number | null
-  title: string
+  position: number | null;
+  title: string;
 }

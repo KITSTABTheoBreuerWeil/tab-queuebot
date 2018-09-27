@@ -2,7 +2,7 @@ import {
   compose,
   filter,
   map,
-  sortBy
+  sortBy,
 } from 'lodash/fp';
 
 import { getPullRequests } from './githubAPI';
@@ -10,14 +10,14 @@ import { getPullRequests } from './githubAPI';
 import {
   isQueued,
   PullRequest,
-  pullRequestObjectFromAPIData
+  pullRequestObjectFromAPIData,
 } from './pullRequest';
 
 // typings
 
 import {
-  APIPullRequestsData,
-  APIGetPullRequestsResponse
+  APIGetPullRequestsResponse,
+  APIPullRequestObject,
 } from './githubAPI.interfaces';
 
 /* Helper functions */
@@ -30,7 +30,7 @@ const sortedUpdateCandidates = compose(
 
 const updatePosition = (
   pullRequest: PullRequest,
-  index: number
+  index: number,
 ): void => {
 
   const position: number = index + 1;
@@ -38,11 +38,10 @@ const updatePosition = (
   if (pullRequest.shouldUpdate(position)) {
     try {
       pullRequest.updatePosition(position);
-    }
-    catch (error) {
+    } catch (error) {
       console.error(error.message);
-    };
-  };
+    }
+  }
 };
 
 /* The requeue function:
@@ -56,12 +55,11 @@ export const requeue = async (): Promise<void> => {
 
   try {
     response = await getPullRequests();
-  }
-  catch (error) {
+  } catch (error) {
     return console.error(error.message);
-  };
+  }
 
   // we cast to inform the compiler that we account for an APIErrorResponse
-  const pullRequestsData = (response.data || []) as APIPullRequestsData;
+  const pullRequestsData = (response.data || []) as APIPullRequestObject[];
   sortedUpdateCandidates(pullRequestsData).forEach(updatePosition);
 };

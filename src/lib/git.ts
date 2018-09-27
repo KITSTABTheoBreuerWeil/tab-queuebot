@@ -9,11 +9,11 @@ import { execSyncWithOutput } from './helpers';
 
 const {
   REMOTE: {
-    DOMAIN
+    DOMAIN,
   },
   SETTINGS: {
-    REBASE
-  }
+    REBASE,
+  },
 } = getConfig();
 
 /* repository helpers */
@@ -21,7 +21,7 @@ const {
 const createRepositoryURL = (domain: string = DOMAIN): string => {
   return domain + path.posix.join(
     process.env.REPOSITORY_OWNER,
-    process.env.REPOSITORY_NAME 
+    process.env.REPOSITORY_NAME,
   );
 };
 
@@ -40,7 +40,7 @@ const cloneRepository = (): number => {
 const cloneRepositoryIfAbsent = (): number => {
   if (!haveClonedRepository()) {
     return cloneRepository();
-  };
+  }
 
   return 0;
 };
@@ -53,7 +53,7 @@ const runWithinRepository = (operation: () => void): void => {
 
   operation();
 
-  process.chdir(initialDirectory)
+  process.chdir(initialDirectory);
 };
 
 /* rebase functions */
@@ -67,5 +67,5 @@ const doRebaseOperation = (branchName: string): void => {
 export const rebaseBranch = (branchName: string): void => {
   if (REBASE as boolean) {
     return runWithinRepository(() => doRebaseOperation(branchName));
-  };
+  }
 };

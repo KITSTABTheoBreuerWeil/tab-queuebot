@@ -4,6 +4,11 @@ import { testingConfig } from './testing';
 // typings
 import { Configuration } from './config.interfaces';
 
+const modeErrorMessage = (mode: string) => {
+  return `NODE_ENV (currently "${mode}") must be production, ` +
+    `development or testing`;
+};
+
 export const getConfig = (): Configuration => {
   const mode = process.env.NODE_ENV;
 
@@ -15,8 +20,6 @@ export const getConfig = (): Configuration => {
     case 'development':
       return developmentConfig;
     default:
-      throw new Error(`NODE_ENV (currently "${mode}") must` +
-        ` be production, development or testing`
-      );
-  };
+      throw new Error(modeErrorMessage(mode));
+  }
 };

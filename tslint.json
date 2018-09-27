@@ -1,0 +1,25 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+      "interface-name": false,
+      "no-console": {
+        "severity": "error",
+        "options": [
+          "debug",
+          "info",
+          "log",
+          "time",
+          "timeEnd",
+          "trace"
+        ]
+      },
+      "quotemark": [true, "single"],
+      "semicolon": [true, "always"],
+      "member-ordering": [false]
+    },
+  "rulesDirectory": []
+}
