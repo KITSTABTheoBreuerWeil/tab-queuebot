@@ -1,21 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
     "allowJs": true,
-    "outDir": "./build",
-    "composite": true,
-    "importHelpers": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
+    "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
+    "lib": [
+      "ES2018"
+    ],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true
+    "module": "commonjs",
+    "target": "es2017"
   }
 }

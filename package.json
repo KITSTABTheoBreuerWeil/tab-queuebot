@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Adjusts merge queue numbers for you!",
   "respository": "git@github.com:KITSTABTheoBreuerWeil/tab-queuebot.git",
-  "main": "server.ts",
   "author": "Theo Breuer-Weil <theo.breuer-weil@theappbusiness.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.ts",
-    "start-dev": "$(npm bin)/nodemon server.ts",
-    "build": "tsc"
+    "start": "node ./build/index.js",
+    "start-dev": "$(npm bin)/nodemon ./build/index.js",
+    "build": "webpack",
+    "build:watch": "webpack --watch"
   },
   "dependencies": {
     "@types/dotenv": "^4.0.3",
@@ -28,6 +28,9 @@
     "@types/express": "^4.16.0",
     "@types/lodash": "^4.14.116",
     "@types/yaml": "^1.0.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "ts-loader": "^5.2.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
   }
 }
