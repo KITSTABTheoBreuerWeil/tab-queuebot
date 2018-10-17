@@ -3,7 +3,7 @@ FROM node:10-alpine
 WORKDIR /app
 
 COPY package.json /app
-RUN yarn install
+RUN yarn install --no-lockfile --silent
 
 COPY ./ /app
 RUN yarn build
