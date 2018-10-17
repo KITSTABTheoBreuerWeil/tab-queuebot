@@ -8,7 +8,4 @@ export interface Configuration {
     PRIORITY: string,
     MERGEABLE: string,
   };
-  SETTINGS: {
-    REBASE: boolean,
-  };
 }
