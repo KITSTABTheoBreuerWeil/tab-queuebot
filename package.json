@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./build/index.js",
-    "start-dev": "$(npm bin)/nodemon ./build/index.js",
+    "start:dev": "concurrently \"nodemon ./build/index.js\" \"yarn build:watch\"",
     "build": "webpack",
     "build:watch": "webpack --watch",
     "lint": "tslint -c tslint.json src/**/*.ts src/**/**/*.ts",
@@ -30,6 +30,7 @@
     "@types/jest": "^23.3.2",
     "@types/lodash": "^4.14.116",
     "@types/yaml": "^1.0.0",
+    "concurrently": "^4.0.1",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
     "testdouble": "^3.8.1",
@@ -40,22 +41,4 @@
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1"
   },
-  "jest": {
-    "globals": {
-      "ts-jest": {
-        "tsConfigFile": "tsconfig.json"
-      }
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
-    },
-    "testMatch": [
-      "**/tests/**/*.test.(ts|js)"
-    ],
-    "testEnvironment": "node"
-  }
 }

@@ -34,12 +34,12 @@ const sortedUpdateCandidates = compose(
 
 /* Pull request titles are 1-indexed. */
 
-const updatePosition = (pullRequest: PullRequest, index: number): void => {
+const updatePosition = async (pullRequest: PullRequest, index: number): Promise<void> => {
   const position: number = index + 1;
 
   if (pullRequest.shouldUpdate(position)) {
     try {
-      pullRequest.updatePosition(position);
+      await pullRequest.updatePosition(position);
     } catch (error) {
       console.error(error.message);
     }
