@@ -57,6 +57,6 @@ export const pullRequestObjectFromAPIData = ({
     titleComponents.position,
     data.number,
     titleComponents.title,
-    'MERGEABLE',
+    'mergeable',
   );
 };

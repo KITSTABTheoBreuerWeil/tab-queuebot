@@ -1,9 +1,9 @@
-FROM node:10-alpine
+FROM node:10.12.0-alpine
 
 WORKDIR /app
 
 COPY package.json /app
-RUN yarn install --no-lockfile --silent
+RUN yarn install --no-lockfile
 
 COPY ./ /app
 RUN yarn build

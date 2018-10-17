@@ -1,0 +1,12 @@
+{
+  "number": 1112,
+  "title": "[1] something else",
+  "labels": [
+    {
+      "name": "bug"
+    },
+    {
+      "name": "mergeable"
+    }
+  ]
+}

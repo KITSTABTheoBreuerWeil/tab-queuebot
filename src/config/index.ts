@@ -5,12 +5,12 @@ import { productionConfig } from './production';
 import { testingConfig } from './testing';
 
 const modeErrorMessage = (mode: string) => {
-  return `NODE_ENV (currently "${mode}") must be production, ` +
+  return `ENVIRONMENT (currently "${mode}") must be production, ` +
     `development or testing`;
 };
 
 export const getConfig = (): Configuration => {
-  const mode = process.env.NODE_ENV;
+  const mode = process.env.ENVIRONMENT;
 
   switch (mode && mode.toLowerCase()) {
     case 'production':

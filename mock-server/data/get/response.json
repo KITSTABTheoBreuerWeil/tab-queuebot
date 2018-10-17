@@ -1,0 +1,48 @@
+[
+  {
+    "number": 1111,
+    "title": "new-feature",
+    "labels": [
+      {
+        "name": "bug"
+      }
+    ]
+  },
+  {
+    "number": 1112,
+    "title": "[2] something else",
+    "labels": [
+      {
+        "name": "bug"
+      },
+      {
+        "name": "mergeable"
+      }
+    ]
+  },
+  {
+    "number": 1113,
+    "title": "[5] a third thing",
+    "labels": [
+      {
+        "name": "mystery"
+      },
+      {
+        "name": "excellent"
+      }
+    ]
+  },
+  {
+    "number": 1212,
+    "title": "[WIP] in progress"
+  },
+  {
+    "number": 1234,
+    "title": "[random] some more in progress",
+    "labels": [
+      {
+        "name": "mergeable"
+      }
+    ]
+  }
+]

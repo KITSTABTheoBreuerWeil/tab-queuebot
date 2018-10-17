@@ -7,8 +7,8 @@ import { dependencyInjector } from './middlewares';
 export const app = express();
 
 /* configure middlewares */
-app.use(bodyParser.json())
-app.use(dependencyInjector)
+app.use(bodyParser.json());
+app.use(dependencyInjector);
 
 /* routes */
 app.get('/info', infoController);

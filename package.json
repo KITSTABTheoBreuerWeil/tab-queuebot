@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node ./build/index.js",
     "start:dev": "concurrently \"nodemon ./build/index.js\" \"yarn build:watch\"",
+    "start:test": "ENVIRONMENT=testing yarn start:dev",
     "build": "webpack",
     "build:watch": "webpack --watch",
     "lint": "tslint -c tslint.json src/**/*.ts src/**/**/*.ts",
