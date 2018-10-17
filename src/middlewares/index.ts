@@ -1,0 +1,1 @@
+export { dependencyInjector } from './dependencies';

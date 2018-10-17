@@ -1,17 +1,16 @@
-import { requeue } from '../lib/requeue';
-
-// typings
 import { Request, Response } from 'express';
 
+import { requeue } from '../lib';
+
 export const webhookController = async (
-  _: Request,
+  request: Request,
   response: Response,
 ): Promise<void> => {
 
   let statusCode: number = 201;
 
   try {
-    await requeue();
+    await requeue(request.services.githubAPIService);
   } catch (error) {
     statusCode = 400;
     console.error(error);

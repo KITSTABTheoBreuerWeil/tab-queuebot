@@ -1,8 +1,8 @@
-import { developmentConfig } from './development'; import { productionConfig } from './production';
-import { testingConfig } from './testing';
+import { Configuration } from '../lib';
 
-// typings
-import { Configuration } from './config.interfaces';
+import { developmentConfig } from './development';
+import { productionConfig } from './production';
+import { testingConfig } from './testing';
 
 const modeErrorMessage = (mode: string) => {
   return `NODE_ENV (currently "${mode}") must be production, ` +

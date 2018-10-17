@@ -1,4 +1,4 @@
-import { Configuration } from './config.interfaces';
+import { Configuration } from '../lib';
 
 export const testingConfig: Configuration = {
   LABELS: {
@@ -7,7 +7,8 @@ export const testingConfig: Configuration = {
   },
   REMOTE: {
     API: 'https://api.github.com/',
-    DOMAIN: 'https://github.com/',
+    OWNER: 'kits',
+    REPOSITORY: 'repo',
   },
   SETTINGS: {
     REBASE: false,

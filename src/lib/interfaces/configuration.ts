@@ -1,7 +1,8 @@
 export interface Configuration {
   REMOTE: {
-    DOMAIN: string,
     API: string,
+    OWNER: string,
+    REPOSITORY: string,
   };
   LABELS: {
     PRIORITY: string,
