@@ -36,7 +36,7 @@ export class GithubAPIService {
   )
 
   private createHeaders = (): RequestHeaders => ({
-    Authorization: `Basic ${this.createAuthorisationString()}`,
+    Authorization: this.createAuthorisationString(),
   })
 
   private createAuthorisationString = (): string => (

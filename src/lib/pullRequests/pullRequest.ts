@@ -34,11 +34,15 @@ export class PullRequest {
    * patch request to update it. */
   public updatePosition = async (
     position: number,
-  ): Promise<PatchPullRequestResponse> => (
-    this.api.patchPullRequest(this.prNumber, {
-      title: this.getTitleAtQueuePosition(position),
-    })
-  )
+  ): Promise<PatchPullRequestResponse> => {
+    try {
+      return this.api.patchPullRequest(this.prNumber, {
+        title: this.getTitleAtQueuePosition(position),
+      });
+    } catch (error) {
+      return error.response;
+    }
+  }
 
   private hasLabel = (label: string): boolean => (
     this.labels.includes(label)

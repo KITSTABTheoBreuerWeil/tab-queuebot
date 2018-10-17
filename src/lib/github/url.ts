@@ -12,6 +12,6 @@ export class URLService {
   }
 
   public pullRequestURLByNumber = (prNumber: number) => {
-    return posix.join(this.pullRequestsURL(), prNumber.toString());
+    return `${this.pullRequestsURL()}/${prNumber.toString()}`;
   }
 }
